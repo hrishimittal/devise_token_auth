@@ -18,7 +18,7 @@ module DeviseTokenAuth::Concerns::ConfirmableSupport
   protected
 
   def email_value_in_database
-    if Devise.rails51? && respond_to?(:email_in_database)
+    if Devise.activerecord51? && respond_to?(:email_in_database)
       email_in_database
     else
       email_was
